@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kadın Ürünleri</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="site-header">
+    <h1>Kadın Ürünleri</h1>
+    <a href="index.html" class="back-button">Ana Sayfa</a>
+    <a href="cart.html" id="cart">Sepet (<span id="cart-count">0</span>)</a>
+  </header>
+
+  <div class="container">
+    <div class="product" data-id="1" data-name="Kadın Elbise" data-price="1400">
+      <img src="images/elbise.jpg" alt="Kadın Elbise">
+      <h2>Kadın Elbise</h2>
+      <p>Fiyat: 1400 TL</p>
+      <button onclick="addToCart( 1,'Kadın Elbise',1400,'images/elbise.jpg')">Sepete Ekle</button>
+    </div>
+    <div class="product" data-id="2" data-name="Kadın Çanta" data-price="180">
+      <img src="images/çantakadın.jpg" alt="Kadın Çanta">
+      <h2>Kadın Çanta</h2>
+      <p>Fiyat: 180 TL</p>
+      <button onclick="addToCart( 2,'Kadın Çanta',180,'images/çantakadın.jpg')">Sepete Ekle</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

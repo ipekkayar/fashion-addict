@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sepetiniz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="site-header">
+    <h1>Sepetiniz</h1>
+    <a href="index.html" class="back-button">Ana Sayfa</a>
+    <a href="cart.html" id="cart">Sepet (<span id="cart-count">0</span>)</a>
+  </header>
+
+  <main id="cart-container" class="container"></main>
+
+  <script src="script.js"></script>
+ 
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let cart = loadCart();       
+      const container = document.getElementById("cart-container");
+    
+      if (!cart.length) {
+        container.innerHTML = "<p>Sepetiniz boş.</p>";
+        return;
+      }
+    
+      const itemsHtml = cart.map(item => `
+        <div class="cart-item">
+          <img src="${item.image}" alt="${item.name}" class="cart-img" />
+          <h2>${item.name}</h2>
+          <p>Adet: ${item.qty}</p>
+          <p>Fiyat: ${item.price} TL</p>
+          <p>Ara Toplam: ${item.price * item.qty} TL</p>
+          <div class="cart-actions">
+            <button onclick="updateQty(${item.id}, -1)">Azalt</button>
+            <button onclick="updateQty(${item.id}, +1)">Arttır</button>
+            <button onclick="removeFromCart(${item.id})">Sil</button>
+          </div>
+        </div>
+      `).join("");
+    
+      const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+      container.innerHTML = itemsHtml + `
+        <div class="cart-total">
+          <h3>Genel Toplam: ${total} TL</h3>
+          <button id="checkout">Ödeme Yap</button>
+        </div>`;
+    
+    });
+    </script>
+    

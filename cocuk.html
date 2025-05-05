@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Çocuk Ürünleri</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="site-header">
+    <h1>Çocuk Ürünleri</h1>
+    <a href="index.html" class="back-button">Ana Sayfa</a>
+    <a href="cart.html" id="cart">Sepet (<span id="cart-count">0</span>)</a>
+  </header>
+
+  <div class="container">
+      <div class="product" data-id="11" data-name="Çocuk Mont" data-price="2500">
+        <img src="images/mont.jpg" alt="Çocuk Mont">
+        <h2>Çocuk Mont</h2>
+        <p>Fiyat: 2500 TL</p>
+        <button onclick="addToCart(11, 'Çocuk Mont', 2500, 'images/mont.jpg')">Sepete Ekle</button>
+      </div>
+      <div class="product" data-id="12" data-name="Çocuk Spor Ayakkabı" data-price="1600">
+        <img src="images/ayakkabı.jpg" alt="Çocuk Spor Ayakkabı">
+        <h2>Çocuk Spor Ayakkabı</h2>
+        <p>Fiyat: 1600 TL</p>
+        <button onclick="addToCart(12, 'Çocuk Spor Ayakkabı', 1600, 'images/ayakkabı.jpg')">Sepete Ekle</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erkek Ürünleri</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header id="site-header">
+    <h1>Erkek Ürünleri</h1>
+    <a href="index.html" class="back-button">Ana Sayfa</a>
+    <a href="cart.html" id="cart">Sepet (<span id="cart-count">0</span>)</a>
+  </header>
+
+  <div class="container">
+    <div class="product" data-id="6" data-name="Erkek Pantolon" data-price="1200">
+      <img src="images/pantolon.jpg" alt="Erkek Pantolon">
+      <h2>Erkek Pantolon</h2>
+      <p>Fiyat: 1200 TL</p>
+      <button onclick="addToCart(6, 'Erkek Pantolon', 1200,'images/pantolon.jpg')">Sepete Ekle</button>
+    </div>
+    <div class="product" data-id="7" data-name="Erkek Gömlek" data-price="1000">
+      <img src="images/gömlek.jpg" alt="Erkek Gömlek">
+      <h2>Erkek Gömlek</h2>
+      <p>Fiyat: 1000 TL</p>
+      <button onclick="addToCart(7, 'Erkek Gömlek', 1000, 'images/gömlek.jpg')">Sepete Ekle</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
